@@ -1,0 +1,55 @@
+# -*- coding: utf-8 -*-
+$:.unshift("/Library/RubyMotion/lib")
+require 'motion/project/template/ios'
+
+begin
+  require 'bundler'
+  Bundler.require
+rescue LoadError
+end
+
+$short_version = '0.0'
+$version = '0.%s' % Time.now.strftime('%y%m.%d%H%M')
+$version_fingerprint = '%s/%s/%s' % [$short_version, $version, `git log -1 --format='format:%h'`.strip]
+
+Motion::Project::App.setup do |app|
+  app.name = '<%= name %>'
+
+  app.short_version = $short_version
+  app.version = $version
+
+  app.device_family = [:iphone, :ipad]
+  app.interface_orientations = [:portrait, :landscape_left, :landscape_right, :portrait_upside_down]
+
+  app.files += Dir.glob(File.join(app.project_dir, 'lib/**/*.rb'))
+
+  app.info_plist['VersionFingerprint'] = $version_fingerprint
+  app.info_plist['ITSAppUsesNonExemptEncryption'] = false
+  app.info_plist['UIStatusBarHidden'] = true
+  app.info_plist['NSAppTransportSecurity'] = { NSAllowsArbitraryLoads: true }
+  # app.info_plist['UILaunchStoryboardName'] = 'Launch Screen'
+
+  app.pods do
+  end
+
+  app.development do
+    if ENV['CI']
+      app.codesign_certificate = nil
+      app.provisioning_profile = nil
+    end
+  end
+
+  app.release do
+    app.entitlements['get-task-allow'] = false
+    app.entitlements['beta-reports-active'] = true
+    app.entitlements['application-identifier'] = app.seed_id + '.' + app.identifier
+    app.entitlements['keychain-access-groups'] = [ app.seed_id + '.' + app.identifier ]
+  end
+end
+
+Motion::SettingsBundle.setup do |app|
+  app.group 'App', footer: "Version: %s" % $version_fingerprint.gsub('/', ' - '), titles: 'titles'
+  app.child "Acknowledgements" do |ack|
+    ack.child "CocoaPods", Title: 'CocoaPods' do end
+  end
+end
