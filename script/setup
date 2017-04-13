@@ -10,7 +10,7 @@ cd "$(dirname "$0")/.."
 script/bootstrap
 
 echo "==> Setting up TestApp…"
-bundle exec motion create --template=chat TestApp
+bundle exec motion create --template=social TestApp
 
 if [ -z "$RAILS_ENV" ] && [ -z "$RACK_ENV" ]; then
   # Only things for a development environment will run inside here

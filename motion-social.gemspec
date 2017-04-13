@@ -1,17 +1,17 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'motion/chat/version'
+require 'motion/social/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "motion-chat"
-  spec.version       = Motion::Chat::VERSION
+  spec.name          = "motion-social"
+  spec.version       = Motion::Social::VERSION
   spec.authors       = ["Liu Lantao"]
   spec.email         = ["liulantao@gmail.com"]
 
-  spec.summary       = %q{RubyMotion Template: Chat}
-  spec.description   = %q{RubyMotion Template: Chat}
-  spec.homepage      = "https://github.com/Lax/motion-chat"
+  spec.summary       = %q{RubyMotion Template: Social}
+  spec.description   = %q{RubyMotion Template: Social}
+  spec.homepage      = "https://github.com/Lax/motion-social"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'

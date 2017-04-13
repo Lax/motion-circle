@@ -16,5 +16,5 @@ nbproject
 .idea
 .dat*.*
 
-# motion-chat ignore
+# motion-social ignore
 Gemfile.lock
