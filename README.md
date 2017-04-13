@@ -1,4 +1,4 @@
-# Motion::Chat
+# Motion::Chat [![Build Status](https://travis-ci.org/Lax/motion-chat.svg?branch=master)](https://travis-ci.org/Lax/motion-chat)
 
 RubyMotion Template: Chat
 
