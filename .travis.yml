@@ -13,5 +13,4 @@ before_script:
   - (motion --version)
   - (ruby --version)
 script:
-  - bundle update && bundle exec motion create --template=chat TestApp
-  - cd TestApp && export BUNDLE_GEMFILE=$(pwd)/Gemfile && bundle update && bundle show && rake clean:all pod:update spec
+  - script/cibuild

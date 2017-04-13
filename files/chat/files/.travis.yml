@@ -13,4 +13,4 @@ before_script:
   - (motion --version)
   - (ruby --version)
 script:
-  - bundle update && bundle show && rake clean:all pod:update spec
+  - script/cibuild
