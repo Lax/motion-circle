@@ -20,4 +20,4 @@ if [ -z "$RAILS_ENV" ] && [ -z "$RACK_ENV" ]; then
   true
 fi
 
-echo "==> App is now ready to go!"
+echo "==> TestApp is now ready to go!"

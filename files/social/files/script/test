@@ -37,5 +37,5 @@ if [ -n "$1" ]; then
   # pass arguments to test call. This is useful for calling a single test.
   script/test "$1"
 else
-  rake clean:all pod:update spec
+  rake clean:all pod:install && rake pod:update spec
 fi
