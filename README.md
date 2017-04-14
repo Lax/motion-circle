@@ -1,13 +1,13 @@
-# Motion::Social [![Build Status](https://travis-ci.org/Lax/motion-social.svg?branch=master)](https://travis-ci.org/Lax/motion-social)
+# Motion::Circle [![Build Status](https://travis-ci.org/Lax/motion-circle.svg?branch=master)](https://travis-ci.org/Lax/motion-circle)
 
-RubyMotion Template: Social
+RubyMotion Template: Circle
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'motion-social'
+gem 'motion-circle'
 ```
 
 And then execute:
@@ -16,11 +16,11 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install motion-social
+    $ gem install motion-circle
 
 ## Usage
 
-    $ motion create --template=social <app>
+    $ motion create --template=circle <app>
 
 ## Development
 
@@ -30,7 +30,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/Lax/motion-social. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/Lax/motion-circle. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 
 ## License

@@ -16,10 +16,5 @@ nbproject
 .idea
 .dat*.*
 
-# motion-social ignore
+# motion-circle ignore
 Gemfile.lock
-
-/resources/Settings.bundle/
-/vendor/gems/
-
-.bundle

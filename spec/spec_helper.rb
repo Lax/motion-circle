@@ -1,5 +1,5 @@
 require "bundler/setup"
-require "motion/social"
+require "motion/circle"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
