@@ -14,7 +14,7 @@ $version_fingerprint = '%s/%s/%s' % [$short_version, $version, `git log -1 --for
 
 Motion::Project::App.setup do |app|
   app.name = '<%= name %>'
-
+  app.identifier = 'com.your_domain_here.%s' % app.name.downcase.strip.gsub(/\s/, '_')
   app.short_version = $short_version
   app.version = $version
 
@@ -22,6 +22,8 @@ Motion::Project::App.setup do |app|
   app.interface_orientations = [:portrait, :landscape_left, :landscape_right, :portrait_upside_down]
 
   app.files += Dir.glob(File.join(app.project_dir, 'lib/**/*.rb'))
+  app.resources_dirs += %w(resources/icons)
+  app.icons = Dir.glob("resources/icons/*.png").map{|icon| icon.split("/").last}
 
   app.info_plist['VersionFingerprint'] = $version_fingerprint
   app.info_plist['ITSAppUsesNonExemptEncryption'] = false
@@ -30,6 +32,8 @@ Motion::Project::App.setup do |app|
   # app.info_plist['UILaunchStoryboardName'] = 'Launch Screen'
 
   app.pods do
+    pod 'SDWebImage', '~>3.8'
+    pod 'JSQMessagesViewController', git: 'https://github.com/jessesquires/JSQMessagesViewController.git', branch: 'develop'
   end
 
   app.development do

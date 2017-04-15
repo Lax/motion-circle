@@ -9,3 +9,5 @@ gem 'ProMotion'
 gem 'sugarcube', :require => %w{sugarcube-color sugarcube-files sugarcube-foundation sugarcube-localized sugarcube-timer sugarcube-ui sugarcube-repl}
 gem 'afmotion'
 gem 'moticons'
+
+gem 'motion-kit'
