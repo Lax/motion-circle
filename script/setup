@@ -7,10 +7,11 @@ set -e
 
 cd "$(dirname "$0")/.."
 
+APP="${1:-DemoApp}"
+
 script/bootstrap
 
-echo "==> Setting up TestApp…"
-bundle exec motion create --template=circle TestApp
+echo "==> Setting up Circle…"
 
 if [ -z "$RAILS_ENV" ] && [ -z "$RACK_ENV" ]; then
   # Only things for a development environment will run inside here
@@ -20,4 +21,4 @@ if [ -z "$RAILS_ENV" ] && [ -z "$RACK_ENV" ]; then
   true
 fi
 
-echo "==> TestApp is now ready to go!"
+echo "==> Circle is now ready to go!"

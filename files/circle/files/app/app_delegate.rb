@@ -3,7 +3,7 @@ class AppDelegate < PM::Delegate
 
   def on_load(app, options)
     return true if RUBYMOTION_ENV == "test"
-    open HomeScreen.new(nav_bar: true)
+    open_tab_bar HomeScreen.new(nav_bar: true), MessagesScreen.new(nav_bar: true), LoginScreen.new(nav_bar: true)
 
     UINavigationBar.appearance.tintColor = :white.uicolor
     UINavigationBar.appearance.barTintColor = [255, 102, 0].uicolor
@@ -14,7 +14,10 @@ class AppDelegate < PM::Delegate
     )
     UINavigationBar.appearance.setBackIndicatorImage icon_image(:awesome, :arrow_circle_left, size: UIFont.labelFontSize, color: :white.uicolor)
     UINavigationBar.appearance.setBackIndicatorTransitionMaskImage icon_image(:awesome, :arrow_circle_o_left, size: UIFont.labelFontSize, color: :white.uicolor)
-    mp UINavigationBar.appearance.titleTextAttributes
+  end
+
+  def on_open_url(args = {})
+    mp args
   end
 
 end

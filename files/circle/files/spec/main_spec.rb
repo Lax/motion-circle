@@ -1,4 +1,4 @@
-describe "Application '<%= name %>'" do
+describe "Application '#{App.name}'" do
   before do
     @app = UIApplication.sharedApplication
   end
@@ -6,4 +6,5 @@ describe "Application '<%= name %>'" do
   it "is a ProMotion app" do
     @app.delegate.should.be.kind_of(PM::Delegate)
   end
+
 end
