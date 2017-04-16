@@ -5,7 +5,7 @@ module HN
       include HN::Builder
 
       def login(username, password, &callback)
-        client.post("HNH_Login".info_plist, acct: username, pw: password) do |result|
+        client.post('login', acct: username, pw: password) do |result|
           if result.success? and profile
             profile_info(&callback) if callback
           else
@@ -26,7 +26,7 @@ module HN
       end
 
       def profile_info(id=profile, &block)
-        bget("HNH_Profile".info_plist, profile_builder, id: id, &block)
+        bget('user', profile_builder, id: id, &block)
       end
 
       def profile_builder

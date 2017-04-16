@@ -32,11 +32,6 @@ Motion::Project::App.setup do |app|
   app.info_plist['NSAppTransportSecurity'] = { NSAllowsArbitraryLoads: true }
   # app.info_plist['UILaunchStoryboardName'] = 'Launch Screen'
 
-  app.info_plist['HNH_Base'] = 'https://news.ycombinator.com' # 'HNH_Base'.info_plist
-  app.info_plist['HNH_Login'] = 'login'
-  app.info_plist['HNH_Profile'] = 'user'
-  # app.info_plist['HNH_User'] = 'user'
-
   app.pods do
     pod 'SDWebImage', '~>3.8'
     pod 'JSQMessagesViewController', git: 'https://github.com/jessesquires/JSQMessagesViewController.git', branch: 'develop'
