@@ -2,7 +2,7 @@ module HN
   module Client
 
     def client
-      @client = AFMotion::SessionClient.build('HNH_Base'.info_plist) do
+      @client = AFMotion::SessionClient.build('https://news.ycombinator.com') do
         session_configuration :default
         header "Accept", "text/html"
         response_serializer :http
@@ -12,7 +12,7 @@ module HN
     private
 
     def hn_cookies
-      NSHTTPCookieStorage.sharedHTTPCookieStorage.cookiesForURL("HNH_Base".info_plist.nsurl)
+      NSHTTPCookieStorage.sharedHTTPCookieStorage.cookiesForURL('https://news.ycombinator.com'.nsurl)
     end
 
     def cookies
