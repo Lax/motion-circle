@@ -3,7 +3,7 @@ class AppDelegate < PM::Delegate
 
   def on_load(app, options)
     return true if RUBYMOTION_ENV == "test"
-    open_tab_bar HomeScreen.new(nav_bar: true), MessagesScreen.new(nav_bar: true), LoginScreen.new(nav_bar: true)
+    open_tab_bar HomeScreen.new(nav_bar: true), LoginScreen.new(nav_bar: true)
 
     UINavigationBar.appearance.tintColor = :white.uicolor
     UINavigationBar.appearance.barTintColor = [255, 102, 0].uicolor

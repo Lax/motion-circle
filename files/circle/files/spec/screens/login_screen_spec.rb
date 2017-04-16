@@ -23,6 +23,10 @@ describe LoginScreen do
     view("password_field").should.be.kind_of(UITextField)
   end
 
+  it "has a left nav bar button" do
+    login_screen.navigationItem.leftBarButtonItem.should.be.kind_of(UIBarButtonItem)
+  end
+
   it "has a right nav bar button" do
     login_screen.navigationItem.rightBarButtonItem.should.be.kind_of(UIBarButtonItem)
   end

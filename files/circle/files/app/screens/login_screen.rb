@@ -6,9 +6,15 @@ class LoginScreen < PM::Screen
   end
 
   def on_load
-    @login_btn = set_nav_bar_button(:right, title: self.title, action: :toggole_login)
+    @messages_btn = set_nav_bar_button(:right, title: "Messages"._, image: icon_image(:foundation, :comments, size: UIFont.labelFontSize), action: :show_messages).tap {|btn| btn.accessibilityLabel = "Messages" }
+
+    @login_btn = set_nav_bar_button(:left, title: self.title, action: :toggole_login)
     update_nav_items
     update_avatar
+  end
+
+  def on_init
+    set_tab_bar_item item: "HackerNews", title: "Profile"._
   end
 
   def will_appear
@@ -130,6 +136,10 @@ class LoginScreen < PM::Screen
         avatar.url = nil
       end
     end
+  end
+
+  def show_messages
+    open MessagesScreen.new(nav_bar: true)
   end
 
   def open_settings
