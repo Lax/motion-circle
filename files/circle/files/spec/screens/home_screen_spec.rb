@@ -28,12 +28,8 @@ describe HomeScreen do
     end
   end
 
-  it "opens the help screen when tapping Help" do
-    3.times { tap("Help") }
-
-    wait 0.1 do
-      controller.topViewController.should.be.kind_of(HelpScreen)
-    end
+  it "has Settings button" do
+    view("Settings").should.be.kind_of(UINavigationButton)
   end
 
 end

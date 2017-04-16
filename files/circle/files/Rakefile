@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 $:.unshift("/Library/RubyMotion/lib")
 require 'motion/project/template/ios'
+require './lib/__app'
 
 begin
   require 'bundler'
@@ -13,8 +14,8 @@ $version = '0.%s' % Time.now.strftime('%y%m.%d%H%M')
 $version_fingerprint = '%s/%s/%s' % [$short_version, $version, `git log -1 --format='format:%h'`.strip]
 
 Motion::Project::App.setup do |app|
-  app.name = '<%= name %>'
-
+  app.name = App.name
+  app.identifier = 'com.your_domain_here.%s' % app.name.downcase.strip.gsub(/\s/, '_')
   app.short_version = $short_version
   app.version = $version
 
@@ -22,6 +23,8 @@ Motion::Project::App.setup do |app|
   app.interface_orientations = [:portrait, :landscape_left, :landscape_right, :portrait_upside_down]
 
   app.files += Dir.glob(File.join(app.project_dir, 'lib/**/*.rb'))
+  app.resources_dirs += %w(resources/icons)
+  app.icons = Dir.glob("resources/icons/*.png").map{|icon| icon.split("/").last}
 
   app.info_plist['VersionFingerprint'] = $version_fingerprint
   app.info_plist['ITSAppUsesNonExemptEncryption'] = false
@@ -29,7 +32,14 @@ Motion::Project::App.setup do |app|
   app.info_plist['NSAppTransportSecurity'] = { NSAllowsArbitraryLoads: true }
   # app.info_plist['UILaunchStoryboardName'] = 'Launch Screen'
 
+  app.info_plist['HNH_Base'] = 'https://news.ycombinator.com' # 'HNH_Base'.info_plist
+  app.info_plist['HNH_Login'] = 'login'
+  app.info_plist['HNH_Profile'] = 'user'
+  # app.info_plist['HNH_User'] = 'user'
+
   app.pods do
+    pod 'SDWebImage', '~>3.8'
+    pod 'JSQMessagesViewController', git: 'https://github.com/jessesquires/JSQMessagesViewController.git', branch: 'develop'
   end
 
   app.development do
