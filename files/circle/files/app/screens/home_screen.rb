@@ -13,8 +13,7 @@ class HomeScreen < PM::Screen
   end
 
   def on_init
-    # Fires only once, after the screen has been instantiated and all provided properties set.
-    # A good place to do further initialization of instance variables or set your tab bar icon.
+    set_tab_bar_item item: "Home", title: "Home"._
   end
 
   def will_appear

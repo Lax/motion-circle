@@ -8,7 +8,7 @@ gem 'motion-acknowledgements', github: 'picapica/motion-acknowledgements'
 gem 'motion-kit'
 gem 'motion-kit-events'
 gem 'ProMotion'
-gem 'sugarcube', :require => %w{sugarcube-color sugarcube-files sugarcube-foundation sugarcube-localized sugarcube-timer sugarcube-ui sugarcube-repl}
+gem 'sugarcube', require: %w{sugarcube-color sugarcube-files sugarcube-foundation sugarcube-localized sugarcube-timer sugarcube-ui sugarcube-repl}
 gem 'afmotion'
 gem 'moticons'
 

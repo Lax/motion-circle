@@ -6,8 +6,10 @@ class MessagesScreen < CircleMessagesScreen
 
   def on_load
     super
+  end
 
-    set_nav_bar_button(:right, title: "Profile"._, image: icon_image(:foundation, :torso, size: UIFont.labelFontSize), action: :show_login).tap {|btn| btn.accessibilityLabel = "Profile" }
+  def on_init
+    set_tab_bar_item item: "Messages", title: "Messages"._
   end
 
   def will_appear
