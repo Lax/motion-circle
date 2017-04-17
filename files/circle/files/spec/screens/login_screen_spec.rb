@@ -23,8 +23,20 @@ describe LoginScreen do
     view("password_field").should.be.kind_of(UITextField)
   end
 
+  it "has a left nav bar button" do
+    login_screen.navigationItem.leftBarButtonItem.should.be.kind_of(UIBarButtonItem)
+  end
+
   it "has a right nav bar button" do
     login_screen.navigationItem.rightBarButtonItem.should.be.kind_of(UIBarButtonItem)
+  end
+
+  it "opens the MessagesScreen when tapping Messages" do
+    3.times { tap("Messages") }
+
+    wait 0.1 do
+      controller.topViewController.should.be.kind_of(MessagesScreen)
+    end
   end
 
 end
