@@ -1,8 +1,8 @@
 language: objective-c
-osx_image: xcode8.2
-#cache:
+osx_image: xcode8.3
+cache:
 #  - bundler
-#  - cocoapods
+  - cocoapods
 rvm: 2.4
 before_install:
   - (motion --version)
