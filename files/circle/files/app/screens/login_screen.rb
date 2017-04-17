@@ -8,7 +8,7 @@ class LoginScreen < PM::Screen
   def on_load
     @messages_btn = set_nav_bar_button(:right, title: "Messages"._, image: icon_image(:foundation, :comments, size: UIFont.labelFontSize), action: :show_messages).tap {|btn| btn.accessibilityLabel = "Messages" }
 
-    @login_btn = set_nav_bar_button(:left, title: self.title, action: :toggole_login)
+    @login_btn = set_nav_bar_button(:left, title: "Login"._, action: :toggole_login).tap {|btn| btn.accessibilityLabel = "Login" }
     update_nav_items
     update_avatar
   end
