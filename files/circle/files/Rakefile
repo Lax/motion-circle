@@ -35,6 +35,7 @@ Motion::Project::App.setup do |app|
   app.pods do
     pod 'SDWebImage', '~>3.8'
     pod 'JSQMessagesViewController', git: 'https://github.com/jessesquires/JSQMessagesViewController.git', branch: 'develop'
+    pod 'SlackTextViewController'
   end
 
   app.development do
